@@ -141,7 +141,9 @@ img{
   object-fit: cover;
 }
 /* SITE-NAV */
-
+.site-header__sitenav{
+  margin-right: auto;
+}
 .sitenav-info__list {
   display: flex;
   padding: 0;
@@ -179,9 +181,59 @@ img{
 }
 /* SITE-NAV END  */
 
+/* SHOPPING CART  */
+.site-header__cart-modal {
+  position: absolute;
+  right: -76px;
+  top: 94px;
+  width: 360px;
+}
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 256px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+.shopping-cart--modal {
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
+}
+.shopping-cart__header {
+  padding: 24px 24px 27px;
+  border-bottom: 1px solid var(--diveder-bg);
+}
+.shopping-cart__title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-color-dark)
+}
+.shopping-cart__inner {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+.shopping-cart__empty .shopping-cart__content{
+  display: none;
+}
+.shopping-cart--empty .shopping-cart--empty{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 
+}
 /* SITE-HEADER-CART START  */
-
+.site-header__cart{
+  margin-right: 46px;
+  margin-left: 24px;
+}
 .site-header__cart-link {
   position: relative;
   display: flex;
@@ -192,6 +244,9 @@ img{
 }
 .site-header__cart-link:active{
   opacity:0.6;
+}
+.site-header__cart--empty .site-header__card-product-count{
+  display: none;
 }
 .site-header__card-product-count {
   position: absolute;
@@ -206,8 +261,24 @@ img{
   border-radius: 7px;
 }
 .site-header__korzinka-icon {
-width: 22px;
-height: 20px;
-object-fit: contain;
+  width: 22px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.site-header__profile-link {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+.site-header__profile-link:hover{
+  border-color: var(--accent-color);
+}
+
+.site-header__profile-avater {
+  width: 50px;
+  height: 50px;
 }
 /* SITE-HEADER-CART-END */
