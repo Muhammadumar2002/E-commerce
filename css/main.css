@@ -101,26 +101,49 @@ img{
 .container{
   position: relative;
   width: 100%;
-  max-width: 1148px;
+  max-width: 1140px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* BUTTON  */
-.button {
-  padding-top: 18px;
-  padding-bottom: 13px;
-  display: inline-block;
-  background-color: var(--orange);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
+/* IMG SHOWCASE */
+
+.img-showcase__showcase {
+margin-bottom: 32px;
+}
+.img-showcase__active-img {
+display: block;
+width: 445px;
+height: 445px;
+object-fit: cover;
+border-radius: 15px;
+}
+.img-showcase__thumbnails {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: auto;
+}
+.img-showcase__thumbnail{
+  flex-shrink: 0;
+  overflow: auto;
+}
+.img-showcase__thumbnail:not(:last-child) {
+  margin-right: 31px;
+}
+.img-showcase__thumbnail-button {
+  padding: 0;
+  border:0;
+  background-color: transparent;
+}
+.img-showcase__thumbnail-img {
+  width:88px;
+  height: 88px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
 /* SITE-HEADER  START*/
@@ -181,12 +204,117 @@ img{
 }
 /* SITE-NAV END  */
 
+/* BUTTON  */
+.button {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  border-radius:10px;
+  font-weight: bold;
+  background-color:var(--accent-color);
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+.button--block{
+  display: flex;
+  width: 100% ;
+}
+.button--wide{
+  min-width:272px;
+}
+.button:hover{
+  background-color: var(--accent-color-hover);
+}
+.button:active{
+  transform: translateY(2px);
+}
+.button__inner {
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding: 22px 20px 18px;
+}
+.button__prepend{
+  margin-right: 16px;
+}
+
+/* SHOPPING CART PRODUCTS */
+
+
+.shopping-cart-products {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.shopping-cart-products__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* ITEM SHOPPING CART PRODUCTS  */
+.item-shopping-cart-products {
+  display: flex;
+  align-items: flex-start;
+}
+.item-shopping-cart-products__img {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  margin-right: 16px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.item-shopping-cart-products__info {
+  flex-grow: 1;
+  margin-right: 18px;
+  overflow: hidden;
+  width: 100%;
+}
+.item-shopping-cart-products__name {
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.item-shopping-cart-products__subtotal{
+  color: var(--text-color-dark);
+}
+.item-shopping-cart-products__remove-button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  align-self: center;
+  color: #C3CAD9;
+  cursor: pointer;
+}
+.item-shopping-cart-products__remove-button:hover{
+  color: var(--text-color-dark);
+}
+.item-shopping-cart-products__remove-button:active{
+  opacity: 0.6;
+}
+.item-shopping-cart-products__remove-icon{
+  display: block;
+  width: 14px;
+  height: 16px;
+}
 /* SHOPPING CART  */
-.site-header__cart-modal {
+.site-header__cart-modal__open {
+  display: block;
   position: absolute;
   right: -76px;
   top: 94px;
   width: 360px;
+}
+.site-header__cart-modal{
+  display: none;
 }
 .shopping-cart {
   display: flex;
@@ -221,6 +349,10 @@ img{
 .shopping-cart__empty .shopping-cart__content{
   display: none;
 }
+.shopping-cart__products{
+  margin-bottom: 24px;
+}
+
 .shopping-cart--empty .shopping-cart--empty{
   flex-grow: 1;
   display: flex;
@@ -282,3 +414,26 @@ img{
   height: 50px;
 }
 /* SITE-HEADER-CART-END */
+
+/* PRODUCT-PAGE START  */
+.product-page {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.product-page__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1045px;
+}
+
+.product-page-gallery {
+  width: 100%;
+  max-width: 445px;
+  margin-right: 48px;
+}
+.product-page-info {
+  width: 100%;
+  max-width: 445px;
+}
+/* PRODUCT-PAGE END  */
