@@ -17,7 +17,7 @@ html{
 
 /* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -25,7 +25,7 @@ html{
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
+  background-color: var(--accent-color);
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
@@ -41,10 +41,6 @@ html{
   box-sizing:inherit;
 }
 
-*:focus{
-  outline: 3px dashed #FF7E1B;
-  outline-offset: 3px;
-}
 
 /* FONTS */
 @font-face {
@@ -135,15 +131,44 @@ border-radius: 15px;
   margin-right: 31px;
 }
 .img-showcase__thumbnail-button {
+  position: relative;
+  display: block;
+  cursor: pointer;
   padding: 0;
   border:0;
   background-color: transparent;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.img-showcase__thumbnail-button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.5);
+  content: "";
+  opacity: 0;
+}
+.img-showcase__thumbnail-button:hover:after{
+  opacity: 1;
+}
+.img-showcase__thumbnail-button:active{
+  opacity: 0.6;
 }
 .img-showcase__thumbnail-img {
+  display: block;
   width:88px;
   height: 88px;
   object-fit:cover;
   border-radius:10px;
+  object-fit: cover;
+}
+.selected .img-showcase__thumbnail-button::after{
+  border: 2px solid var(--accent-color);
+  background-color: rgba(255,255,255, 0.75);
+  opacity: 1;
 }
 
 /* SITE-HEADER  START*/
