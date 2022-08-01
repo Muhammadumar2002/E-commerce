@@ -16,8 +16,10 @@ if (elSiteHeaderCartLink) {
 
 
 // IMAGE SHOWCASE
+const elImgShowcaseActiveImg = document.querySelector('.img-showcase__active-img')
 const elsImgShowcaseThumbnailButton = document.querySelectorAll('.js-img-showcase-thumbnail-button');
 const elsImgThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
+
 
 
   elsImgShowcaseThumbnailButton.forEach(function (elButton) {
@@ -29,5 +31,10 @@ const elsImgThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
 
       // Add active statevto clicked button
       elButton.parentElement.classList.add(modifiers.imgThumbnailActive);
+
+      // Update active image scr accordingly
+      elImgShowcaseActiveImg.src = elButton.dataset.imgShowcaseBig;
+      elImgShowcaseActiveImg.srcset = `${elButton.dataset.imgShowcaseBig} 1x, ${elButton.dataset.imgShowcaseRetina}
+      2x`;
     });
   });
