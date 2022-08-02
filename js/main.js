@@ -1,6 +1,8 @@
 const modifiers = {
-    imgThumbnailActive:'selected'
-}
+    imgThumbnailActive:'selected',
+    siteHeaderCartModalOpen:'site-header__cart-modal__open',
+    lightboxOpen:'lightbox--open'
+};
 
  // SHOPPING CART MODAL
   const elSiteHeaderCartLink = document.querySelector('.js-site-header-cart-link');
@@ -10,7 +12,7 @@ if (elSiteHeaderCartLink) {
   elSiteHeaderCartLink.addEventListener('click', function (evt) {
     evt.preventDefault();
 
-    elSiteHeaderCartModal.classList.toggle('site-header__cart-modal__open');
+    elSiteHeaderCartModal.classList.toggle(modifiers.siteHeaderCartModalOpen);
   });
 }
 
@@ -40,5 +42,18 @@ const elsImgThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
   });
 
   // LIGHTBOX
-  const elLightboxToggler = document.querySelector('.img-showcase__showcase-lightbox-toggle');
-  const elLightbox = document.querySelector('.lightbox');
+    const elLightbox = document.querySelector('.lightbox');
+    const elLightboxToggler = document.querySelector('.js-lightbox-toggler');
+    const elLightClose = document.querySelector('.js-lightbox-close');
+
+    if(elLightboxToggler){
+      elLightboxToggler.addEventListener('click', function () {
+        elLightbox.classList.add(modifiers.lightboxOpen);
+      });
+    }
+
+    if(elLightClose){
+      elLightClose.addEventListener('click', function () {
+        elLightbox.classList.remove(modifiers.lightboxOpen);
+      });
+    }
