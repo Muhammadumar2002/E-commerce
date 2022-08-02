@@ -38,3 +38,7 @@ const elsImgThumbnail = document.querySelectorAll('.img-showcase__thumbnail');
       2x`;
     });
   });
+
+  // LIGHTBOX
+  const elLightboxToggler = document.querySelector('.img-showcase__showcase-lightbox-toggle');
+  const elLightbox = document.querySelector('.lightbox');
