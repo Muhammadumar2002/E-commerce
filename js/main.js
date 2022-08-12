@@ -141,13 +141,12 @@ const elquantityButtonPlus = document.querySelector('.js-quantity-button-plus');
 const elquantitInfoButton = document.querySelector('.product-info__quantity');
 
 
-elquantityButtonMinus.addEventListener('click', function(){
-  elquantitInfoButton.innerHTML = +elquantitInfoButton.innerHTML -1;
-});
-
 elquantityButtonMinus.addEventListener('click', function (){
   if (elquantitInfoButton.innerHTML < 1) {
     elquantitInfoButton.innerHTML = 0;
+  }
+  else{
+    elquantitInfoButton.innerHTML = +elquantitInfoButton.innerHTML -1;
   }
 });
 
